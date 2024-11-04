@@ -7,7 +7,7 @@ console.log("It is working");
 //invoking
 
 
-
+// ========================================================================
 
 
 // side effects:
@@ -19,6 +19,8 @@ console.log("It is working");
 //     console.log(ttl);  //causing I/O 
 //     return ttl;
 // }
+
+// ========================================================================
 
 // pure function:
 
@@ -32,6 +34,7 @@ console.log("It is working");
 
 // console.log(val);
 
+// ========================================================================
 
 // high order function:
 // function that takes one or more functions as an argument is high order function or returns a function itself
@@ -48,21 +51,49 @@ console.log("It is working");
 
 //second example:
 
-const addAndSquare = (a, b)=>{
-    const ttl = a + b;
+// const addAndSquare = (a, b)=>{
+//     const ttl = a + b;
 
-    const square = (multiplier) => ttl ** multiplier;
-    return square;
-}
+//     const square = (multiplier) => ttl ** multiplier;
+//     return square;
+// }
 
 // const val = addAndSquare(3,2);
 // console.log(val(3));
 
 // Or
 
-const val = addAndSquare(2,3)(3);
-console.log(val);
+// const val = addAndSquare(2,3)(3);
+// console.log(val);
+
+// ========================================================================
 
 // recursion
 
+const factorial = (n) => {
+    console.log(n);
+
+    if (n < 1) return 1;
+    return n * factorial(n - 1)
+
+}
+console.log(factorial(5));
+
+// ========================================================================
+
+const money = [234, 4, 32, 235, 546, 23];
+
+const ttl = (arr) => {
+
+    //base case to end the loop
+    if (!arr.length) return 0;
+
+    //call the function itself
+    return arr.pop() + ttl(arr);
+}
+console.log(ttl(money));
+
+
+// ========================================================================
 // homework
+
